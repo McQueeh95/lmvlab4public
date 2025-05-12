@@ -1,16 +1,47 @@
 document.getElementById('navbar').innerHTML = `
       <nav class="d-flex justify-content-between align-items-center py-3">
-      <div class="logo">Velvet Nights</div>
-      <ul class="nav">
-        <li class="nav-item"><a class="nav-link" href="index.html">Про нас</a></li>
-        <li class="nav-item"><a class="nav-link" href="events.html">Події</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Контакти</a></li>
-        <li class="nav-item"><a class="nav-link" href="galery.html">Галерея</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Увійти</a></li>
-      </ul>
-    </nav>
-    <hr class="nav-divider">
+        <div class="logo">Velvet Nights</div>
+        <button class="menu-btn">☰</button>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Про нас</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Події</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Контакти</a></li>
+          <li class="nav-item"><a class="nav-link" href="galery.html">Галерея</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Увійти</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-sidebar">
+        <button class="close-btn">×</button>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Про нас</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Події</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Контакти</a></li>
+          <li class="nav-item"><a class="nav-link" href="galery.html">Галерея</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Увійти</a></li>
+        </ul>
+      </div>
+      <hr class="nav-divider">
 `;
+
+// Mobile menu functionality
+const menuBtn = document.querySelector('.menu-btn');
+const closeBtn = document.querySelector('.close-btn');
+const mobileSidebar = document.querySelector('.mobile-sidebar');
+
+menuBtn.addEventListener('click', () => {
+  mobileSidebar.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  mobileSidebar.classList.remove('active');
+});
+
+// Close sidebar when clicking outside
+document.addEventListener('click', (e) => {
+  if (!mobileSidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+    mobileSidebar.classList.remove('active');
+  }
+});
 
 function renderEvenets(){
   const list = document.getElementById("events");
@@ -54,8 +85,5 @@ function renderGallery(){
       i++;
   }
 }
-
-
-
 
 document.addEventListener("DOMContentLoaded", () => {renderEvenets(); renderGallery();});

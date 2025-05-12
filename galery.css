@@ -120,3 +120,131 @@
   .pagination{
     margin-top: 2.5rem;
   }
+
+  @media (max-width: 576px) {
+    .logo {
+      font-size: 2rem;
+      margin: 0;
+    }
+  
+    .nav-link {
+      font-size: 1.2rem;
+    }
+  
+    
+  
+    .lead {
+      font-size: 1.2rem;
+    }
+  
+    .custom-btn {
+      width: 100%;
+      height: 4rem;
+      font-size: 1.4rem;
+      line-height: 3.8rem;
+    }
+  
+    nav {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0;
+    }
+  
+    nav .nav {
+      display: none;
+    }
+  
+    .nav-divider {
+      top: 60px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      width: 100%;
+      height: auto;
+      margin: 0 auto 1rem auto;
+      max-width: 300px;
+    }
+
+    .placeholder-image {
+      height: 200px;
+    }
+
+    .pagination {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .page-btn, .next-btn {
+      font-size: 1rem;
+      padding: 0.3rem 0.8rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+    #collections {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .page-btn, .next-btn {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.8rem;
+    }
+  }
+  
+  /* Mobile Menu Button */
+  .menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  /* Mobile Sidebar */
+  .mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(to bottom, #B83B92, #592F83);
+    padding: 2rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .mobile-sidebar.active {
+    right: 0;
+  }
+  
+  .mobile-sidebar .nav {
+    display: flex;
+  }
+  
+  .mobile-sidebar .nav-link {
+    font-size: 1.2rem;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
